@@ -57,21 +57,21 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
           <h3>Monte Carlo Simulation Results</h3>
           <ResponsiveContainer width="100%" height={400}>
             <AreaChart data={monteCarloData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis 
                 dataKey="year" 
-                stroke="#888"
+                stroke="#666666"
                 label={{ value: 'Year', position: 'insideBottom', offset: -5, style: { fill: '#888' } }}
               />
               <YAxis 
-                stroke="#888"
+                stroke="#666666"
                 tickFormatter={formatCurrency}
                 label={{ value: 'Balance', angle: -90, position: 'insideLeft', style: { fill: '#888' } }}
               />
               <Tooltip 
                 formatter={formatCurrency}
-                contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
-                labelStyle={{ color: '#888' }}
+                contentStyle={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                labelStyle={{ color: '#333333' }}
               />
               <Legend />
               <Area
@@ -79,8 +79,8 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
                 dataKey="p95"
                 stackId="1"
                 stroke="none"
-                fill="#2d4a2b"
-                fillOpacity={0.4}
+                fill="#00B9E4"
+                fillOpacity={0.1}
                 name="95th Percentile"
               />
               <Area
@@ -88,8 +88,8 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
                 dataKey="p75"
                 stackId="2"
                 stroke="none"
-                fill="#3d5a3b"
-                fillOpacity={0.5}
+                fill="#00B9E4"
+                fillOpacity={0.2}
                 name="75th Percentile"
               />
               <Area
@@ -97,8 +97,8 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
                 dataKey="median"
                 stackId="3"
                 stroke="none"
-                fill="#4d6a4b"
-                fillOpacity={0.6}
+                fill="#00B9E4"
+                fillOpacity={0.3}
                 name="Median"
               />
               <Area
@@ -106,8 +106,8 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
                 dataKey="p25"
                 stackId="4"
                 stroke="none"
-                fill="#5d7a5b"
-                fillOpacity={0.5}
+                fill="#00B9E4"
+                fillOpacity={0.2}
                 name="25th Percentile"
               />
               <Area
@@ -115,15 +115,15 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
                 dataKey="p5"
                 stackId="5"
                 stroke="none"
-                fill="#6d8a6b"
-                fillOpacity={0.4}
+                fill="#00B9E4"
+                fillOpacity={0.1}
                 name="5th Percentile"
               />
               <Line
                 type="monotone"
                 dataKey="actual"
-                stroke="#00ff00"
-                strokeWidth={2}
+                stroke="#00B9E4"
+                strokeWidth={3}
                 dot={false}
                 name="Expected"
               />
@@ -135,36 +135,36 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
           <h3>Balance Projection</h3>
           <ResponsiveContainer width="100%" height={400}>
             <ComposedChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis 
                 dataKey="year" 
-                stroke="#888"
+                stroke="#666666"
                 label={{ value: 'Year', position: 'insideBottom', offset: -5, style: { fill: '#888' } }}
               />
               <YAxis 
-                stroke="#888"
+                stroke="#666666"
                 tickFormatter={formatCurrency}
                 label={{ value: 'Balance', angle: -90, position: 'insideLeft', style: { fill: '#888' } }}
               />
               <Tooltip 
                 formatter={formatCurrency}
-                contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
-                labelStyle={{ color: '#888' }}
+                contentStyle={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                labelStyle={{ color: '#333333' }}
               />
               <Legend />
               <Area
                 type="monotone"
                 dataKey="balance"
-                fill="#2d4a2b"
-                fillOpacity={0.3}
-                stroke="#00ff00"
+                fill="#00B9E4"
+                fillOpacity={0.2}
+                stroke="#00B9E4"
                 strokeWidth={2}
                 name="Nominal Balance"
               />
               <Line
                 type="monotone"
                 dataKey="inflationAdjusted"
-                stroke="#ff9900"
+                stroke="#ff6b35"
                 strokeWidth={2}
                 strokeDasharray="5 5"
                 dot={false}
@@ -199,7 +199,7 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
             <Line
               type="monotone"
               dataKey="withdrawal"
-              stroke="#ff4444"
+              stroke="#dc3545"
               strokeWidth={2}
               dot={false}
               name="Annual Withdrawal"
@@ -207,7 +207,7 @@ const ChartDisplay: React.FC<ChartDisplayProps> = ({ scenario, showMonteCarlo })
             <Line
               type="monotone"
               dataKey="returns"
-              stroke="#44ff44"
+              stroke="#28a745"
               strokeWidth={2}
               dot={false}
               name="Investment Returns"

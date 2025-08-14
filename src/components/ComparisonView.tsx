@@ -15,7 +15,7 @@ interface ComparisonViewProps {
   scenarios: Scenario[]
 }
 
-const colors = ['#00ff00', '#ff9900', '#00ffff', '#ff00ff', '#ffff00', '#ff4444', '#4444ff']
+const colors = ['#00B9E4', '#ff6b35', '#28a745', '#6f42c1', '#fd7e14', '#dc3545', '#007bff']
 
 const ComparisonView: React.FC<ComparisonViewProps> = ({ scenarios }) => {
   const maxYears = Math.max(...scenarios.map(s => s.inputs.yearsToProject))
@@ -90,21 +90,21 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ scenarios }) => {
         <h3>Balance Comparison</h3>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
             <XAxis 
               dataKey="year" 
-              stroke="#888"
+              stroke="#666666"
               label={{ value: 'Year', position: 'insideBottom', offset: -5, style: { fill: '#888' } }}
             />
             <YAxis 
-              stroke="#888"
+              stroke="#666666"
               tickFormatter={formatCurrency}
               label={{ value: 'Balance', angle: -90, position: 'insideLeft', style: { fill: '#888' } }}
             />
             <Tooltip 
               formatter={formatCurrency}
-              contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
-              labelStyle={{ color: '#888' }}
+              contentStyle={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+              labelStyle={{ color: '#333333' }}
             />
             <Legend />
             {scenarios.map((scenario, index) => (
@@ -126,21 +126,21 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ scenarios }) => {
         <h3>Inflation-Adjusted Balance Comparison</h3>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
             <XAxis 
               dataKey="year" 
-              stroke="#888"
+              stroke="#666666"
               label={{ value: 'Year', position: 'insideBottom', offset: -5, style: { fill: '#888' } }}
             />
             <YAxis 
-              stroke="#888"
+              stroke="#666666"
               tickFormatter={formatCurrency}
               label={{ value: 'Inflation-Adjusted Balance', angle: -90, position: 'insideLeft', style: { fill: '#888' } }}
             />
             <Tooltip 
               formatter={formatCurrency}
-              contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
-              labelStyle={{ color: '#888' }}
+              contentStyle={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+              labelStyle={{ color: '#333333' }}
             />
             <Legend />
             {scenarios.map((scenario, index) => (

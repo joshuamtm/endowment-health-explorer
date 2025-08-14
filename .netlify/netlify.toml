@@ -10,7 +10,6 @@ redirects = []
 publish = "/Users/joshua/endowment-health-explorer/dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
-base = "/Users/joshua/endowment-health-explorer"
 command = "npm run build"
 
 [build.environment]
